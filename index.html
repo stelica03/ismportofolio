@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Moloz, Pietriș și Agregate | București, Ilfov, Călărași</title>
+  <meta name="description" content="Transport rapid pentru moloz, pietriș, nisip, balast și agregate în București, Ilfov și Călărași. Livrare promptă pentru persoane fizice și firme." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --light: #f8fafc;
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f1f5f9;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1150px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--bg);
+      color: white;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .phone-link {
+      background: var(--accent);
+      color: #111827;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.9)),
+                  radial-gradient(circle at top right, rgba(245,158,11,.25), transparent 30%);
+      color: white;
+      padding: 24px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0 28px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #e5e7eb;
+      font-size: 15px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: #f8fafc;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #dbeafe;
+      max-width: 690px;
+      margin: 0 0 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111827;
+    }
+
+    .btn-primary:hover { background: #fbbf24; }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      background: rgba(255,255,255,.05);
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,.1); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 18px;
+      padding: 16px;
+      backdrop-filter: blur(6px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .quote-box {
+      background: white;
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-box h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 24px;
+    }
+
+    .quote-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 22px;
+    }
+
+    .quote-box li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .quote-box li:last-child { border-bottom: 0; }
+
+    .highlight-phone {
+      display: block;
+      text-align: center;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 16px;
+      border-radius: 16px;
+      font-size: 24px;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .service-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: linear-gradient(180deg, #fff, #f8fafc);
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #111827;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .area-box {
+      background: var(--bg-soft);
+      color: white;
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .area-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    .cta-final {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      border-radius: 30px;
+      padding: 38px;
+      text-align: center;
+      color: #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final h2 { margin-top: 0; font-size: clamp(30px, 4vw, 46px); }
+    .cta-final p { max-width: 760px; margin: 0 auto 22px; font-size: 18px; }
+
+    footer {
+      background: #0b1220;
+      color: #cbd5e1;
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .area-box,
+      .cards,
+      .steps,
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .service-list,
+      .area-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .service-list,
+      .area-list {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .quote-box,
+      .card,
+      .step,
+      .cta-final,
+      .area-box {
+        padding: 22px;
+      }
+
+      .topbar-inner,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Livrare rapidă pentru <strong>București, Ilfov și Călărași</strong></div>
+      <a class="phone-link" href="tel:07XXXXXXXX">Sună acum: 07XX XXX XXX</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <nav>
+        <div class="logo">Transport<span>Agregate</span></div>
+        <div class="nav-links">
+          <a href="#servicii">Servicii</a>
+          <a href="#avantaje">Avantaje</a>
+          <a href="#zone">Zone livrare</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="badge">Transport moloz, pietriș, nisip, balast și agregate</div>
+          <h1>Livrăm rapid materiale și preluăm molozul rezultat din lucrări</h1>
+          <p>
+            Servicii prompte pentru șantiere, renovări și amenajări. Oferim transport pentru moloz,
+            pietriș, nisip, balast și alte agregate, cu livrare în București, Ilfov și Călărași.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:07XXXXXXXX">Comandă telefonic</a>
+            <a class="btn btn-secondary" href="#contact">Solicită ofertă</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>3 județe</strong>
+              <span>acoperite zilnic</span>
+            </div>
+            <div class="stat">
+              <strong>Rapid</strong>
+              <span>livrare și ridicare</span>
+            </div>
+            <div class="stat">
+              <strong>Flexibil</strong>
+              <span>pentru persoane și firme</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-box">
+          <h3>Ce putem transporta</h3>
+          <ul>
+            <li>Moloz rezultat din demolări și renovări</li>
+            <li>Pietriș pentru construcții și amenajări</li>
+            <li>Nisip, balast și sorturi diverse</li>
+            <li>Livrări către șantiere, curți și spații industriale</li>
+          </ul>
+          <div class="highlight-phone">07XX XXX XXX</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="servicii">
+    <div class="container">
+      <div class="section-title">
+        <h2>Servicii complete de transport</h2>
+        <p>Lucrăm rapid, organizat și adaptat cerințelor din teren, pentru comenzi mici sau mari.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Transport moloz</h3>
+          <p>Preluăm molozul rezultat din demolări, spargeri, renovări și lucrări de amenajare, cu programări rapide.</p>
+        </div>
+        <div class="card">
+          <h3>Livrare pietriș</h3>
+          <p>Asigurăm pietriș pentru turnări, alei, fundații, drenaj și alte aplicații din construcții.</p>
+        </div>
+        <div class="card">
+          <h3>Agregate și balast</h3>
+          <p>Furnizăm nisip, balast și alte materiale necesare pentru șantiere rezidențiale sau comerciale.</p>
+        </div>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">Transport moloz din apartamente și case</div>
+        <div class="service-item">Livrare pietriș și nisip la adresă</div>
+        <div class="service-item">Comenzi pentru firme de construcții</div>
+        <div class="service-item">Programări rapide în București și Ilfov</div>
+        <div class="service-item">Curse dedicate pentru Călărași</div>
+        <div class="service-item">Ofertă personalizată în funcție de cantitate</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avantaje" style="background:#e2e8f0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>De ce să lucrezi cu noi</h2>
+        <p>Ne concentrăm pe seriozitate, timpi de reacție buni și livrare corectă în funcție de comandă.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Suni</h3>
+          <p>Ne spui ce tip de material ai nevoie sau ce cantitate de moloz trebuie ridicată.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Primești oferta</h3>
+          <p>Îți comunicăm rapid costul estimativ în funcție de locație, cantitate și tipul transportului.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Stabilim livrarea</h3>
+          <p>Programăm cursa în intervalul convenit pentru București, Ilfov sau Călărași.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Executăm rapid</h3>
+          <p>Ajungem la adresă și finalizăm transportul în condiții sigure și eficiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zone">
+    <div class="container">
+      <div class="area-box">
+        <div>
+          <h2 style="margin-top:0; font-size: 38px;">Zone de livrare</h2>
+          <p style="color:#cbd5e1; font-size:17px;">
+            Operăm în mod constant în București, în localitățile din Ilfov și pentru comenzi programate în Călărași.
+          </p>
+          <a class="btn btn-primary" href="tel:07XXXXXXXX">Sună pentru disponibilitate</a>
+        </div>
+
+        <div class="area-list">
+          <div class="pill">București</div>
+          <div class="pill">Voluntari</div>
+          <div class="pill">Otopeni</div>
+          <div class="pill">Pantelimon</div>
+          <div class="pill">Popești-Leordeni</div>
+          <div class="pill">Bragadiru</div>
+          <div class="pill">Chiajna</div>
+          <div class="pill">Buftea</div>
+          <div class="pill">Călărași</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="cta-final">
+        <h2>Ai nevoie de transport moloz sau agregate?</h2>
+        <p>
+          Sună acum pentru comandă, ofertă sau programare. Răspundem rapid pentru livrări în București,
+          Ilfov și Călărași.
+        </p>
+        <div class="cta-row" style="justify-content:center; margin-bottom:0;">
+          <a class="btn btn-secondary" style="background:#111827; border-color:#111827;" href="tel:07XXXXXXXX">07XX XXX XXX</a>
+          <a class="btn btn-secondary" style="background:white; color:#111827; border-color:white;" href="mailto:contact@transportagregate.ro">contact@transportagregate.ro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>TransportAgregate</strong> — Transport moloz, pietriș, nisip și balast</div>
+      <div>București • Ilfov • Călărași</div>
+    </div>
+  </footer>
+</body>
+</html>
